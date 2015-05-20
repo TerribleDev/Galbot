@@ -11,7 +11,13 @@
 #
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
 
+TIMEZONE = "America/New_York"
+TRIGGER = '0 0 9 * * 2-6' # M-F 5am
+ROOM = "226_gallery@conf.hipchat.com"
+cronJob = require('cron').CronJob
+
 module.exports = (robot) ->
+
 
   next = () ->
    rotation = robot.brain.get('rotation')
@@ -27,7 +33,7 @@ module.exports = (robot) ->
    robot.brain.set('current', current)
    robot.messageRoom ROOM, "#{current} is now Queue boss"
 
-  update = new cronJob trigger,
+  update = new cronJob TRIGGER,
                   ->
                     next()
                   null
