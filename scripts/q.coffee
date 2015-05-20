@@ -69,6 +69,18 @@ module.exports = (robot) ->
     robot.messageRoom ROOM, "#{current} is now Queue boss"
     res.say "#{current} is now Queue boss"
 
+    robot.respond /q set (.*)/i, (res) ->
+      rotation = robot.brain.get('rotation')
+      current = robot.brain.get('currentRotation')
+      request = res.match[1].trim()
+      index = rotation.indexOf(request);
+      if index > -1
+        robot.brain.set('currentRotation', request)
+        robot.messageRoom ROOM, "#{request} is now Queue boss"
+        res.say "#{request} is now Queue boss"
+      else
+        robot.say "Could not find #{request} in rotation"
+
 
   # robot.hear /badger/i, (res) ->
   #   res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
