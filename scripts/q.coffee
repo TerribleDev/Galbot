@@ -44,13 +44,13 @@ module.exports = (robot) ->
    rotation = robot.brain.get('rotation')
    if rotation == null || typeof rotation == "undefined"?
     rotation = []
-   rotation.push res.match[0]
+   rotation.push res.match[1]
    robot.brain.set "rotation", rotation
 
   robot.respond /q remove (.*)/i, (res) ->
    rotation = robot.brain.get('rotation')
    current = robot.brain.get('current')
-   if(current == res.match[0])
+   if(current == res.match[1])
     res.send "User is currently on rotation"
    else
     rotation = rotation.filter (word) -> current
