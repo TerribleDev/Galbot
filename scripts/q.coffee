@@ -33,7 +33,7 @@ module.exports = (robot) ->
 
   robot.respond /q remove (.*)/i, (res) ->
    rotation = robot.brain.get('rotation')
-   current = robot.brain.get('current')
+   current = robot.brain.get('currentRotation')
    if(current == res.match[1])
     res.send "User is currently on rotation"
    else
@@ -45,21 +45,22 @@ module.exports = (robot) ->
     res.send rotation.join('\n')
   robot.respond /queueboss/i, (res) ->
     res.send "Getting queueboss"
-    res.send robot.brain.get('current')
+    res.send robot.brain.get('currentRotation')
 
   robot.respond /q next/i, (res) ->
-   rotation = robot.brain.get('rotation')
-   current = robot.brain.get('current')
-   if current == null
-    res.send("no q boss found")
-    current = roation[0]
-   else
-    location = rotation.indexOf current
-    if location < 0 || location == (rotation.length - 1)
-     current = rotation[0]
+    robot.send("Moving Queue boss")
+    rotation = robot.brain.get('rotation')
+    current = robot.brain.get('currentRotation')
+    if current == null
+     res.send("no q boss found")
+     current = roation[0]
     else
-     current = rotation[location + 1]
-   robot.brain.set('current', current)
+     location = rotation.indexOf current
+     if location < 0 || location == (rotation.length - 1)
+      current = rotation[0]
+     else
+      current = rotation[location + 1]
+    robot.brain.set('currentRotation', current)
    #robot.messageRoom ROOM, "#{current} is now Queue boss"
 
 
