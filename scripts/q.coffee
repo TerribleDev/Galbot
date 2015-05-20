@@ -79,7 +79,7 @@ module.exports = (robot) ->
         robot.messageRoom ROOM, "#{request} is now Queue boss"
         res.say "#{request} is now Queue boss"
       else
-        robot.say "Could not find #{request} in rotation"
+        res.say "Could not find #{request} in rotation"
 
 
   # robot.hear /badger/i, (res) ->
