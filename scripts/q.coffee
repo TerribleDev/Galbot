@@ -15,7 +15,9 @@
 #   hubot q add <UserName> - add user to rotation!
 #   hubot q remove <UserName> - remove user to rotation!
 #   hubot q next - move to next
+#   hubot q set <username> - Set user as queueboss
 #   hubot queueboss - get current boss
+#   hubot q get get current boss
 
 TIMEZONE = "America/New_York"
 TRIGGER = '0 0 9 * * 2-6' # M-F 5am
@@ -47,7 +49,7 @@ module.exports = (robot) ->
   robot.respond /q list/i, (res) ->
     rotation = robot.brain.get('rotation')
     res.send rotation.join('\n')
-  robot.respond /queueboss/i, (res) ->
+  robot.respond /(queueboss|q get)/i, (res) ->
     boss = robot.brain.get('currentRotation')
     if boss == null || boss == ""
       res.send "No queueboss found"
