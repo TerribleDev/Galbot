@@ -10,6 +10,12 @@
 #   Uncomment the ones you want to try and experiment with.
 #
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
+#
+# Commands:
+#   hubot q add <UserName> - add user to rotation!
+#   hubot q remove <UserName> - remove user to rotation!
+#   hubot q next - move to next
+#   hubot q current - move to next
 
 TIMEZONE = "America/New_York"
 TRIGGER = '0 0 9 * * 2-6' # M-F 5am
@@ -59,6 +65,8 @@ module.exports = (robot) ->
   robot.respond /q list/i, (res) ->
     rotation = robot.brain.get('rotation')
     res.send rotation.join('\n')
+  robot.respond /queueboss/i, (res) ->
+    res.send robot.brain.get('current')
 
   robot.respond /q next/i, (res) ->
    next()
