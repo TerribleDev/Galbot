@@ -28,17 +28,18 @@ module.exports = (robot) ->
    rotation = robot.brain.get('rotation')
    if rotation == null || typeof rotation == "undefined"?
     rotation = []
-   rotation.push res.match[1]
+   rotation.push res.match[1].trim()
    robot.brain.set "rotation", rotation
 
   robot.respond /q remove (.*)/i, (res) ->
     rotation = robot.brain.get('rotation')
     current = robot.brain.get('currentRotation')
+    request = res.match[1].trim()
     #res.say "Attempting to remove #{res.match[1]}"
-    if(current == res.match[1])
+    if(current == request)
      res.send "User is currently on rotation"
     else
-     index = rotation.indexOf(res.match[1]);
+     index = rotation.indexOf(request);
      res.send "index #{index}"
      if index > -1
       rotation.splice(index, 1)
