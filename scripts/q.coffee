@@ -38,7 +38,7 @@ module.exports = (robot) ->
     if(current == res.match[1])
      res.send "User is currently on rotation"
     else
-     index = rotation.indexOf(current);
+     index = rotation.indexOf(res.match[1]);
      if index > -1
       rotation.splice(index, 1)
       robot.brain.set('rotation', rotation)
