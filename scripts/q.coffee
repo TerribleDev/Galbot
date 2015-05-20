@@ -24,28 +24,6 @@ cronJob = require('cron').CronJob
 
 module.exports = (robot) ->
 
-
-  next = () ->
-   rotation = robot.brain.get('rotation')
-   current = robot.brain.get('current')
-   if current == null || typeof current == "undefined"
-    current = roation[0]
-   else
-    location = rotation.indexOf current
-    if location < 0 || location == (rotation.length - 1)
-     current = rotation[0]
-    else
-     current = rotation[location + 1]
-   robot.brain.set('current', current)
-   robot.messageRoom ROOM, "#{current} is now Queue boss"
-
-  update = new cronJob TRIGGER,
-                  ->
-                    next()
-                  null
-                  true
-                  TIMEZONE
-
   robot.respond /q add (.*)/i, (res) ->
    rotation = robot.brain.get('rotation')
    if rotation == null || typeof rotation == "undefined"?
@@ -66,10 +44,22 @@ module.exports = (robot) ->
     rotation = robot.brain.get('rotation')
     res.send rotation.join('\n')
   robot.respond /queueboss/i, (res) ->
+    res.send "Getting queueboss"
     res.send robot.brain.get('current')
 
   robot.respond /q next/i, (res) ->
-   next()
+   rotation = robot.brain.get('rotation')
+   current = robot.brain.get('current')
+   if current == null || typeof current == "undefined"
+    current = roation[0]
+   else
+    location = rotation.indexOf current
+    if location < 0 || location == (rotation.length - 1)
+     current = rotation[0]
+    else
+     current = rotation[location + 1]
+   robot.brain.set('current', current)
+   robot.messageRoom ROOM, "#{current} is now Queue boss"
 
 
   # robot.hear /badger/i, (res) ->
