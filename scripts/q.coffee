@@ -52,12 +52,12 @@ module.exports = (robot) ->
       res.send boss
 
   robot.respond /q next/i, (res) ->
-    robot.send("Moving Queue boss")
+    res.send("Moving Queue boss")
     rotation = robot.brain.get('rotation')
     current = robot.brain.get('currentRotation')
     if current == null
      res.send("no q boss found")
-     current = roation[0]
+     current = rotation[0]
     else
      location = rotation.indexOf current
      if location < 0 || location == (rotation.length - 1)
