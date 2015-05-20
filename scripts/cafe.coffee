@@ -27,15 +27,15 @@ module.exports = (robot) ->
   #
   # lulz = ['lol', 'rofl', 'lmao']
   #
-   #robot.respond /cafe/i, (res) ->
-    # res.send "http://www.corporatechefs.com/images/dynamic/Ledgemont362.pdf"
+   robot.respond /cafe/i, (res) ->
+     res.send "http://www.corporatechefs.com/images/dynamic/Ledgemont362.pdf"
 
-  # robot.respond /cafe hours/i, (res) ->
-  #   res.send "Breakfast 7:30 – 10:30am
-#Snacks 10:30 – 11:30am
-#Lunch 11:30 – 1:30pm
-#Deli service until 2pm
-#Snacks 2:00 – 2:30pm"
+   robot.respond /cafe hours/i, (res) ->
+     res.send "Breakfast 7:30 – 10:30am
+Snacks 10:30 – 11:30am
+Lunch 11:30 – 1:30pm
+Deli service until 2pm
+Snacks 2:00 – 2:30pm"
   #
   # robot.topic (res) ->
   #   res.send "#{res.message.text}? That's a Paddlin'"
