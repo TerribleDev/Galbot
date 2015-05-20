@@ -32,15 +32,16 @@ module.exports = (robot) ->
    robot.brain.set "rotation", rotation
 
   robot.respond /q remove (.*)/i, (res) ->
-   rotation = robot.brain.get('rotation')
-   current = robot.brain.get('currentRotation')
-   if(current == res.match[1])
-    res.send "User is currently on rotation"
-   else
-    index = rotation.indexOf(current);
-    if index > -1
-     rotation.spliace(index, 1)
-     robot.brain.set('rotation', rotation)
+    rotation = robot.brain.get('rotation')
+    current = robot.brain.get('currentRotation')
+    #res.say "Attempting to remove #{res.match[1]}"
+    if(current == res.match[1])
+     res.send "User is currently on rotation"
+    else
+     index = rotation.indexOf(current);
+     if index > -1
+      rotation.splice(index, 1)
+      robot.brain.set('rotation', rotation)
 
   robot.respond /q list/i, (res) ->
     rotation = robot.brain.get('rotation')
