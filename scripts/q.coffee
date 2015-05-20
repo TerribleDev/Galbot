@@ -47,7 +47,7 @@ module.exports = (robot) ->
    rotation.push res.match[0]
    robot.brain.set "rotation", rotation
 
-  robot.respond /q remove (.*)/i, res() ->
+  robot.respond /q remove (.*)/i, (res) ->
    rotation = robot.brain.get('rotation')
    current = robot.brain.get('current')
    if(current == res.match[0])
