@@ -40,7 +40,6 @@ module.exports = (robot) ->
      res.send "User is currently on rotation"
     else
      index = rotation.indexOf(request);
-     res.send "index #{index}"
      if index > -1
       rotation.splice(index, 1)
       robot.brain.set('rotation', rotation)
