@@ -32,10 +32,10 @@ module.exports = (robot) ->
     current = roation[0]
    else
     location = rotation.indexOf current
-   if location < 0 || location == (rotation.length - 1)
-    current = rotation[0]
-   else
-    current = rotation[location + 1]
+    if location < 0 || location == (rotation.length - 1)
+     current = rotation[0]
+    else
+     current = rotation[location + 1]
    robot.brain.set('current', current)
    robot.messageRoom ROOM, "#{current} is now Queue boss"
 
