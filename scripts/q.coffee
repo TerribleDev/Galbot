@@ -46,7 +46,7 @@ module.exports = (robot) ->
   robot.respond /queueboss/i, (res) ->
     res.send "Getting queueboss"
     boss = robot.brain.get('currentRotation')
-    if currentRotation == null || currentRotation == ""
+    if boss == null || boss == ""
       res.send "No queueboss found"
     else
       res.send boss
