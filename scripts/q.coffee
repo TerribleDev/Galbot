@@ -37,14 +37,15 @@ module.exports = (robot) ->
    if(current == res.match[1])
     res.send "User is currently on rotation"
    else
-    rotation = rotation.filter (word) -> current
-   robot.brain.set('rotation', rotation)
+    index = rotation.indexOf(current);
+     if index > -1
+       rotation.spliace(index, 1)
+       robot.brain.set('rotation', rotation)
 
   robot.respond /q list/i, (res) ->
     rotation = robot.brain.get('rotation')
     res.send rotation.join('\n')
   robot.respond /queueboss/i, (res) ->
-    res.send "Getting queueboss"
     boss = robot.brain.get('currentRotation')
     if boss == null || boss == ""
       res.send "No queueboss found"
@@ -52,11 +53,9 @@ module.exports = (robot) ->
       res.send boss
 
   robot.respond /q next/i, (res) ->
-    res.send("Moving Queue boss")
     rotation = robot.brain.get('rotation')
     current = robot.brain.get('currentRotation')
     if current == null
-     res.send("no q boss found")
      current = rotation[0]
     else
      location = rotation.indexOf current
