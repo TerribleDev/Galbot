@@ -45,7 +45,11 @@ module.exports = (robot) ->
     res.send rotation.join('\n')
   robot.respond /queueboss/i, (res) ->
     res.send "Getting queueboss"
-    res.send robot.brain.get('currentRotation')
+    boss = robot.brain.get('currentRotation')
+    if currentRotation == null || currentRotation == ""
+      res.send "No queueboss found"
+    else
+      res.send boss
 
   robot.respond /q next/i, (res) ->
     robot.send("Moving Queue boss")
