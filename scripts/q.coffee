@@ -50,7 +50,8 @@ module.exports = (robot) ->
   robot.respond /q next/i, (res) ->
    rotation = robot.brain.get('rotation')
    current = robot.brain.get('current')
-   if current == null || typeof current == "undefined"
+   if current == null
+    res.send("no q boss found")
     current = roation[0]
    else
     location = rotation.indexOf current
@@ -59,7 +60,7 @@ module.exports = (robot) ->
     else
      current = rotation[location + 1]
    robot.brain.set('current', current)
-   robot.messageRoom ROOM, "#{current} is now Queue boss"
+   #robot.messageRoom ROOM, "#{current} is now Queue boss"
 
 
   # robot.hear /badger/i, (res) ->
