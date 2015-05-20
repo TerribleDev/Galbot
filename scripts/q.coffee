@@ -65,7 +65,8 @@ module.exports = (robot) ->
      else
       current = rotation[location + 1]
     robot.brain.set('currentRotation', current)
-   #robot.messageRoom ROOM, "#{current} is now Queue boss"
+    robot.messageRoom ROOM, "#{current} is now Queue boss"
+    res.say "#{current} is now Queue boss"
 
 
   # robot.hear /badger/i, (res) ->
