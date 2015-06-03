@@ -25,11 +25,12 @@
     "time": "^0.11.3",
     "hubot-ambush": "0.0.3",
     "hubot-status": "0.0.2",
-    "hubot-thesimpsons": "~1.1.3"
+    "hubot-thesimpsons": "~1.1.3",
+    "hubot-voting": "~1.0.0",
+    "hubot-cron": "~0.2.9"
   },
   "engines": {
     "node": "0.10.x"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }

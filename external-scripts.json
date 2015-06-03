@@ -14,5 +14,7 @@
   "hubot-business-cat",
   "hubot-ambush",
   "hubot-status",
-  "hubot-thesimpsons"
+  "hubot-thesimpsons",
+  "hubot-voting",
+  "hubot-cron"
 ]
