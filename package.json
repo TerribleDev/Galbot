@@ -33,5 +33,9 @@
   "engines": {
     "node": "0.10.x"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "chrono-node": "~1.0.6",
+    "lodash": "~3.9.3",
+    "moment": "~2.10.3"
+  }
 }
