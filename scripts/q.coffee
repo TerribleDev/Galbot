@@ -16,6 +16,7 @@
 #   hubot q remove <UserName> - remove user to rotation!
 #   hubot q next - move to next
 #   hubot q set <username> - Set user as queueboss
+#   hubot q list - Lists all in rotation
 #   hubot queueboss - get current boss
 #   hubot q get get current boss
 
