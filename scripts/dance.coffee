@@ -8,6 +8,8 @@
 #
 # Commands:
 #   hubot dance - Dance!
+#   hubot kanban - link our kanban board
+#   hubot statsd - Link our graphana dashboard
 
 
 module.exports = (robot) ->
@@ -27,8 +29,15 @@ module.exports = (robot) ->
   #
   # lulz = ['lol', 'rofl', 'lmao']
   #
-   robot.respond /dance/i, (res) ->
-     res.send "http://hubotbraintparnell.blob.core.windows.net/tparnellrandom/imageedit_6_9390856511.gif"
+  robot.respond /dance/i, (res) ->
+    res.send "http://hubotbraintparnell.blob.core.windows.net/tparnellrandom/imageedit_6_9390856511.gif"
+
+  robot.respond /kanban/i, (res) ->
+    res.send "http://vp/galboard"
+
+  robot.respond /statsd/i, (res) ->
+    res.send "http://vp/galstats"
+
   #
   # robot.topic (res) ->
   #   res.send "#{res.message.text}? That's a Paddlin'"
