@@ -30,7 +30,7 @@ module.exports = (robot) ->
   # lulz = ['lol', 'rofl', 'lmao']
   #
   robot.respond /dance/i, (res) ->
-    res.send "http://hubotbraintparnell.blob.core.windows.net/tparnellrandom/imageedit_6_9390856511.gif"
+    res.send "http://tparnell.blob.core.windows.net/hubot/imageedit_6_9390856511.gif"
 
   robot.respond /kanban/i, (res) ->
     res.send "http://vp/galboard"
