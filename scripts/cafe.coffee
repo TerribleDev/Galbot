@@ -1,4 +1,3 @@
-# Description:
 #   Example scripts for you to examine and try out.
 #
 # Notes:
@@ -9,7 +8,7 @@
 # Commands:
 #   hubot cafe - Get cafe menu
 #   hubot cafe hours - Get cafe hours
-
+var cheerio = require('cheerio');
 module.exports = (robot) ->
 
   # robot.hear /badger/i, (res) ->
@@ -28,15 +27,23 @@ module.exports = (robot) ->
   # lulz = ['lol', 'rofl', 'lmao']
   #
    robot.respond /cafe menu/i, (res) ->
-     res.send "http://www.corporatechefs.com/images/dynamic/Ledgemont362.pdf"
+      robot.http("http://www.hobbsbrook.com/amenities/dining/")
+      .get() (err, res, body) ->
+      # pretend there's error checking code here
+
+      if res.statusCode isnt 200
+        res.send "Request didn't come back HTTP 200 :("
+        return
+      var $ = cheerio.load(body);
+      res.send $(':header:contains(275)').parent().parent().find('.btn-pdf').attr('href')
 
    robot.respond /wagon wheel/i, (res) ->
      res.send "http://wagonwheelinc.com/wp-content/uploads/2014/10/DELI-MENU-2.pdf"
 
    robot.respond /cafe hours/i, (res) ->
      res.send "Breakfast: 7:00-11:00 AM \n
-   Lunch: 11:30 AM-2:00 PM \n
-   Grab N Go: 2:00-2:30 PM"
+Lunch: 11:30 AM-2:00 PM \n
+Grab N Go: 2:00-2:30 PM"
 
 
   #
