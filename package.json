@@ -28,14 +28,12 @@
     "hubot-thesimpsons": "~1.1.3",
     "hubot-voting": "~1.0.0",
     "hubot-cron": "~0.2.9",
-    "hubot-browserstack": "~0.1.6"
-  },
-  "engines": {
-    "node": "0.10.x"
-  },
-  "devDependencies": {
+    "hubot-browserstack": "~0.1.6",
     "chrono-node": "~1.0.6",
     "lodash": "~3.9.3",
     "moment": "~2.10.3"
+  },
+  "engines": {
+    "node": "0.10.x"
   }
 }
