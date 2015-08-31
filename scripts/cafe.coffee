@@ -8,7 +8,7 @@
 # Commands:
 #   hubot cafe - Get cafe menu
 #   hubot cafe hours - Get cafe hours
-var cheerio = require('cheerio');
+cheerio = require('cheerio');
 module.exports = (robot) ->
 
   # robot.hear /badger/i, (res) ->
@@ -34,7 +34,7 @@ module.exports = (robot) ->
       if res.statusCode isnt 200
         res.send "Request didn't come back HTTP 200 :("
         return
-      var $ = cheerio.load(body);
+      $ = cheerio.load(body);
       res.send $(':header:contains(275)').parent().parent().find('.btn-pdf').attr('href')
 
    robot.respond /wagon wheel/i, (res) ->
