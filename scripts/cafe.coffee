@@ -34,11 +34,9 @@ module.exports = (robot) ->
      res.send "http://wagonwheelinc.com/wp-content/uploads/2014/10/DELI-MENU-2.pdf"
 
    robot.respond /cafe hours/i, (res) ->
-     res.send "Breakfast 7:30 – 10:30am \n
-Snacks 10:30 – 11:30am \n
-Lunch 11:30 – 1:30pm \n
-Deli service until 2pm \n
-Snacks 2:00 – 2:30pm"
+     res.send "Breakfast: 7:00-11:00 AM \n
+   Lunch: 11:30 AM-2:00 PM \n
+   Grab N Go: 2:00-2:30 PM"
 
 
   #
