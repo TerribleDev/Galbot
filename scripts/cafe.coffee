@@ -26,15 +26,15 @@ module.exports = (robot) ->
   #
   # lulz = ['lol', 'rofl', 'lmao']
   #
-   robot.respond /cafe menu/i, (res) ->
+   robot.respond /cafe menu/i, (resp) ->
       robot.http("http://www.hobbsbrook.com/amenities/dining")
       .get() (err, res, body) ->
       # pretend there's error checking code here
         if res.statusCode isnt 200
-          res.send "Request came back" + res.statusCode
+          resp.send "Request came back" + res.statusCode
           return
         $ = cheerio.load(body);
-        res.send $(':header:contains(275)').parent().parent().find('.btn-pdf').attr('href')
+        resp.send $(':header:contains(275)').parent().parent().find('.btn-pdf').attr('href')
 
    robot.respond /wagon wheel/i, (res) ->
      res.send "http://wagonwheelinc.com/wp-content/uploads/2014/10/DELI-MENU-2.pdf"
