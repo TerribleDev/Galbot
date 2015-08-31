@@ -27,9 +27,13 @@ module.exports = (robot) ->
   # lulz = ['lol', 'rofl', 'lmao']
   #
    robot.respond /cafe menu/i, (res) ->
-      robot.http("http://www.hobbsbrook.com/amenities/dining/")
+      robot.http("http://www.hobbsbrook.com/amenities/dining")
       .get() (err, res, body) ->
       # pretend there's error checking code here
+
+      if res.statusCode isnt 200
+        res.send "Request didn't come back HTTP 200 :("
+        return
       $ = cheerio.load(body);
       res.send $(':header:contains(275)').parent().parent().find('.btn-pdf').attr('href')
 
