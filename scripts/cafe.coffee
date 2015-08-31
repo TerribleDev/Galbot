@@ -27,7 +27,7 @@ module.exports = (robot) ->
   # lulz = ['lol', 'rofl', 'lmao']
   #
    robot.respond /cafe menu/i, (resp) ->
-      robot.http("http://www.hobbsbrook.com/amenities/dining")
+      robot.http("http://www.hobbsbrook.com/amenities/dining/")
       .get() (err, res, body) ->
       # pretend there's error checking code here
         if res.statusCode isnt 200
