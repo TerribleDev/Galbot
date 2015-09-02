@@ -36,8 +36,15 @@ module.exports = (robot) ->
         $ = cheerio.load(body);
         resp.send $(':header:contains(275)').parent().parent().find('.btn-pdf').attr('href')
 
-   robot.respond /wagon wheel/i, (res) ->
-     res.send "http://wagonwheelinc.com/wp-content/uploads/2014/10/DELI-MENU-2.pdf"
+   robot.respond /wagon wheel/i, (resp) ->
+      robot.http("http://wagonwheelinc.com/deli/")
+      .get() (err, res, body) ->
+      # pretend there's error checking code here
+        if res.statusCode isnt 200
+          resp.send "Request came back" + res.statusCode
+          return
+        $ = cheerio.load(body);
+        resp.send $('a:contains(Deli Menu)').attr('href')
 
    robot.respond /cafe hours/i, (res) ->
      res.send "Breakfast: 7:00-11:00 AM \n
