@@ -31,6 +31,9 @@ module.exports = (robot) ->
   #
   robot.respond /dance/i, (res) ->
     res.send "http://tparnell.blob.core.windows.net/hubot/imageedit_6_9390856511.gif"
+    
+  robot.respond /handlebars/i, (res) ->
+    res.send "https://tparnell.blob.core.windows.net/hubot/handlebars.gif"
 
   robot.respond /kanban/i, (res) ->
     res.send "http://vp/galboard"
