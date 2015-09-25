@@ -34,6 +34,9 @@ module.exports = (robot) ->
     
   robot.respond /handlebars/i, (res) ->
     res.send "https://tparnell.blob.core.windows.net/hubot/handlebars.gif"
+    
+  robot.respond /payday/i, (res) ->
+    res.send "http://i.imgur.com/O02ULTR.gif"
 
   robot.respond /kanban/i, (res) ->
     res.send "http://vp/galboard"
