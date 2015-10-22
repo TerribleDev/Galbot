@@ -43,6 +43,9 @@ module.exports = (robot) ->
 
   robot.respond /statsd/i, (res) ->
     res.send "http://vp/galstats"
+	
+  robot.respond /pullrequests/i, (res) ->
+    res.send "http://devlexgaljnk001/"
 
   #
   # robot.topic (res) ->
