@@ -40,6 +40,9 @@ module.exports = (robot) ->
 
   robot.respond /kanban/i, (res) ->
     res.send "http://vp/galboard"
+	
+  robot.respond /nobeard/i, (res) ->
+    res.send "http://tparnell.blob.core.windows.net/hubot/nobeard.jpg"
 
   robot.respond /statsd/i, (res) ->
     res.send "http://vp/galstats"
