@@ -10,7 +10,7 @@
 #   hubot dance - Dance!
 #   hubot kanban - link our kanban board
 #   hubot statsd - Link our graphana dashboard
-
+#   hubot no - shows a picture of noping
 
 module.exports = (robot) ->
 
@@ -31,24 +31,27 @@ module.exports = (robot) ->
   #
   robot.respond /dance/i, (res) ->
     res.send "http://tparnell.blob.core.windows.net/hubot/imageedit_6_9390856511.gif"
-    
+
   robot.respond /handlebars/i, (res) ->
     res.send "https://tparnell.blob.core.windows.net/hubot/handlebars.gif"
-    
+
   robot.respond /payday/i, (res) ->
     res.send "http://i.imgur.com/O02ULTR.gif"
 
   robot.respond /kanban/i, (res) ->
     res.send "http://vp/galboard"
-	
+
   robot.respond /nobeard/i, (res) ->
     res.send "http://tparnell.blob.core.windows.net/hubot/nobeard.jpg"
 
   robot.respond /statsd/i, (res) ->
     res.send "http://vp/galstats"
-	
+
   robot.respond /pullrequests/i, (res) ->
     res.send "http://devlexgaljnk001/"
+
+  robot.respond /no/i, (res) ->
+    res.send "http://tparnell.blob.core.windows.net/hubot/vxkeb.gif"
 
   #
   # robot.topic (res) ->
