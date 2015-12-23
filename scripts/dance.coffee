@@ -29,9 +29,10 @@ module.exports = (robot) ->
   #
   # lulz = ['lol', 'rofl', 'lmao']
   #
-  robot.hear /(job|jerbs|jerb)/
-  robot.respond /dance/i, (res) ->
+  robot.hear /(job|jerbs|jerb)/, (res) ->
     res.send "http://www.edugeek.net/attachments/forums/general-chat/32142d1442315624-will-robot-take-your-job-bbc-news-humans_jerbs.jpg"
+  robot.respond /dance/i, (res) ->
+    res.send "http://tparnell.blob.core.windows.net/hubot/imageedit_6_9390856511.gif"
 
   robot.respond /handlebars/i, (res) ->
     res.send "https://tparnell.blob.core.windows.net/hubot/handlebars.gif"
