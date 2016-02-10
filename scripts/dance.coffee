@@ -49,8 +49,8 @@ module.exports = (robot) ->
   robot.respond /statsd/i, (res) ->
     res.send "http://vp/galstats"
 
-  robot.respond /pullrequests/i, (res) ->
-    res.send "http://devlexgaljnk001/"
+  robot.respond /leaderboard/i, (res) ->
+    res.send "http://devendeca101/PR/Leaderboard"
 
   robot.respond /no/i, (res) ->
     res.send "http://tparnell.blob.core.windows.net/hubot/vxkeb.gif"
