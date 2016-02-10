@@ -49,7 +49,7 @@ module.exports = (robot) ->
   robot.respond /statsd/i, (res) ->
     res.send "http://vp/galstats"
 
-  robot.respond /pullrequests/i, (res) ->
+  robot.respond /leaderboard/i, (res) ->
     res.send "http://devlexgaljnk001/"
 
   robot.respond /no/i, (res) ->
