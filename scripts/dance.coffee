@@ -50,7 +50,7 @@ module.exports = (robot) ->
     res.send "http://vp/galstats"
 
   robot.respond /leaderboard/i, (res) ->
-    res.send "http://devlexgaljnk001/"
+    res.send "http://devendeca101/PR/Leaderboard"
 
   robot.respond /no/i, (res) ->
     res.send "http://tparnell.blob.core.windows.net/hubot/vxkeb.gif"
