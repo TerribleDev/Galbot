@@ -77,6 +77,10 @@ module.exports = (robot) ->
     rotation = robot.brain.get('rotation')
     current = robot.brain.get('currentRotation')
     request = res.match[1].trim()
+    
+    if request == '@dmorales'
+      request = '@ToastKing'
+    
     index = rotation.indexOf(request);
   #  res.send "index #{index}"
     if index > -1
