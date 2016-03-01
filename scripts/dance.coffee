@@ -37,6 +37,9 @@ module.exports = (robot) ->
   robot.respond /handlebars/i, (res) ->
     res.send "https://tparnell.blob.core.windows.net/hubot/handlebars.gif"
 
+  robot.hear /(very nice)/i, (res) ->
+    res.send "http://ih1.redbubble.net/image.47058467.0614/sticker,375x360.u2.png"
+
   robot.respond /payday/i, (res) ->
     res.send "http://i.imgur.com/O02ULTR.gif"
 
