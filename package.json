@@ -14,7 +14,7 @@
     "hubot-business-cat": "^1.1.19",
     "hubot-cron": "~0.2.9",
     "hubot-diagnostics": "0.0.1",
-    "hubot-google-images": "^0.1.5",
+    "hubot-google-images": "^0.2.6",
     "hubot-google-translate": "^0.1.0",
     "hubot-help": "^0.1.1",
     "hubot-heroku-keepalive": "0.0.4",

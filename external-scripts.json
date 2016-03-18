@@ -17,6 +17,5 @@
   "hubot-thesimpsons",
   "hubot-voting",
   "hubot-cron",
-  "hubot-browserstack",
-  "hubot-google-images"
+  "hubot-browserstack"
 ]
