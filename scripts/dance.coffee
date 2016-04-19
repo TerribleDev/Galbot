@@ -58,6 +58,9 @@ module.exports = (robot) ->
   robot.respond /no/i, (res) ->
     res.send "http://tparnell.blob.core.windows.net/hubot/vxkeb.gif"
 
+  robot.respond /deployment/i, (res) ->
+    res.sent "https://vbujenkins.vistaprint.net/view/Gallery/view/Gallery5%20prod%20deployment/"
+
   #
   # robot.topic (res) ->
   #   res.send "#{res.message.text}? That's a Paddlin'"
