@@ -55,6 +55,7 @@ module.exports = (robot) ->
   robot.respond /no/i, (res) ->
     res.send "http://tparnell.blob.core.windows.net/hubot/vxkeb.gif"
 
+
   #
   # robot.topic (res) ->
   #   res.send "#{res.message.text}? That's a Paddlin'"
