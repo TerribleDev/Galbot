@@ -60,6 +60,8 @@ module.exports = (robot) ->
 
   robot.respond /deployment/i, (res) ->
     res.sent "https://vbujenkins.vistaprint.net/view/Gallery/view/Gallery5%20prod%20deployment/"
+	
+	
 
   #
   # robot.topic (res) ->
