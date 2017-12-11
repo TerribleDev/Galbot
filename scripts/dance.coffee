@@ -30,7 +30,7 @@ module.exports = (robot) ->
   # lulz = ['lol', 'rofl', 'lmao']
   #
   robot.hear /(jerbs|jerb)/i, (res) ->
-    res.send "http://www.edugeek.net/attachments/forums/general-chat/32142d1442315624-will-robot-take-your-job-bbc-news-humans_jerbs.jpg"
+    res.send "http://i2.kym-cdn.com/photos/images/original/000/262/320/021.gif"
   robot.respond /dance/i, (res) ->
     res.send "http://tparnell.blob.core.windows.net/hubot/imageedit_6_9390856511.gif"
 
