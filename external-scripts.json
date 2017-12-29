@@ -16,5 +16,6 @@
   "hubot-thesimpsons",
   "hubot-voting",
   "hubot-cron",
-  "hubot-browserstack"
+  "hubot-browserstack",
+  "hubot-dogeme"
 ]
