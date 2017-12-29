@@ -35,6 +35,6 @@
     "time": "^0.12.0"
   },
   "scripts": {
-    "start-hubot-hipchat": "hubot --name \"galbot\" --adapter hipchat"
+    "start-hubot-hipchat": "hubot --name \"GalBot\" --adapter hipchat"
   }
 }
