@@ -1,1 +1,1 @@
-web: bin/hubot -a hipchat
+web: yarn run start-hubot-hipchat

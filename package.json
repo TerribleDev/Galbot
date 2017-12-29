@@ -35,6 +35,6 @@
     "time": "^0.12.0"
   },
   "scripts": {
-    "meh": "hubot"
+    "start-hubot-hipchat": "hubot --name triatomic hipchat"
   }
 }
