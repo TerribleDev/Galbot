@@ -25,6 +25,7 @@
     "hubot-rules": "^0.1.0",
     "hubot-scripts": "^2.5.16",
     "hubot-shipit": "^0.2.0",
+    "hubot-slack": "^4.5.0",
     "hubot-status": "0.0.2",
     "hubot-thesimpsons": "~1.1.3",
     "hubot-victory": "^1.3.0",
@@ -35,6 +36,7 @@
     "time": "^0.12.0"
   },
   "scripts": {
-    "start-hubot-hipchat": "hubot --name \"GalBot\" --adapter hipchat"
+    "start-hubot-hipchat": "hubot --name \"GalBot\" --adapter hipchat",
+    "start-hubot-slack": "hubot --adapter slack"
   }
 }
