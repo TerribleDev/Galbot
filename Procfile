@@ -1,1 +1,1 @@
-web: yarn run start-hubot-hipchat
+web: yarn run start-hubot-slack
